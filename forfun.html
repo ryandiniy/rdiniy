@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise!</title>
+    <style>
+        body { 
+            display: flex; justify-content: center; align-items: center; 
+            height: 100vh; margin: 0; background: #fee2e2; font-family: 'Arial', sans-serif;
+            overflow: hidden; text-align: center;
+        }
+        .box {
+            font-size: 80px; cursor: pointer; transition: transform 0.3s;
+        }
+        .box:active { transform: scale(0.8); }
+        .hidden { display: none; }
+        h1 { color: #be123c; animation: pop 0.5s ease-out; }
+        @keyframes pop { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+    </style>
+</head>
+<body>
+
+    <div id="card">
+        <div class="box" onclick="reveal()">🎁</div>
+        <p>Tekan kotak ni!</p>
+    </div>
+
+    <div id="message" class="hidden">
+        <h1>🎉 HAPPY BIRTHDAY! 🎉</h1>
+        <p>Semoga murah rezeki & panjang umur! 🎂</p>
+        <img src="https://cdn.discordapp.com/attachments/928567354256937001/1489629296820486456/image.jpg?ex=69d11ce4&is=69cfcb64&hm=435b8e893a5cbcd1dbc29e573adb37a5bbb36c4a37a94d2d8258582391fcc309" width="200">
+    </div>
+
+    <script>
+        function reveal() {
+            document.getElementById('card').classList.add('hidden');
+            document.getElementById('message').classList.remove('hidden');
+            // Boleh tambah sound effect kat sini nanti
+        }
+    </script>
+</body>
+</html>
